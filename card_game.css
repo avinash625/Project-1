@@ -1,0 +1,291 @@
+.front{
+   
+}
+.flip3D{ width:140px; height:200px; margin:10px; float: left;margin-left: 25px; }
+.flip3D > .front{
+  position:absolute;
+  transform: perspective( 600px ) rotateY( 0deg );
+  background-color: white; width:140px; height:200px; border-radius: 17px;
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+}
+.flip3D > .back{
+position:absolute;
+animation-play-state: paused;
+  transform: perspective( 600px ) rotateY( 180deg );
+  background:white; width:140px; height:200px; border-radius: 17px;
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+}
+.flip3D:hover > .front{
+transform: perspective( 600px ) rotateY( -180deg );
+
+animation-fill-mode: forwards;
+animation-play-state: paused;
+backface-visibility: hidden;
+
+}
+.flip3D:hover > .back{
+
+transform: perspective( 600px ) rotateY(  0deg );
+
+}
+@keyframes drop1 {
+0% {
+ transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+25%{
+  transform: rotate(25deg);
+  transition-delay: 5s;
+}
+50% {
+ transform: rotateX(0deg) rotateY(0deg) rotateZ(-25deg); 
+}
+100% {
+  transform: scale(.97, .97) rotateX(15deg) rotateY(15deg) rotateZ(-45deg);
+}
+}
+.drop1{
+transition-delay: 10s;
+transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+animation: drop1 .5s ease-in-out;
+animation-duration: 5s;
+}
+.drop2 {
+transform: rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+animation: drop2 .5s ease-in;
+}
+
+.drop3 {
+transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+animation: drop3 .5s ease-in;
+}
+
+.drop4{
+transform: rotateX(0deg) rotateY(0deg) rotateZ(20deg);
+animation: drop4 .5s ease-in;
+}
+
+.drop5{
+transform: rotateX(0deg) rotateY(0deg) rotateZ(40deg);
+animation: drop5 .5s ease-in;
+@keyframes drop2 {
+0% {
+ transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+}
+50% {
+ transform: rotateX(0deg) rotateY(0deg) rotateZ(-10deg); 
+}
+100% {
+  transform: scale(.97, .97) rotateX(0deg) rotateY(0deg) rotateZ(-20deg);
+}
+}
+
+@keyframes drop3 {
+0% {
+ transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(-50deg); 
+}
+50% {
+ transform: rotateX(0deg) rotateY(50deg) rotateZ(25deg); 
+}
+100% {
+  transform: scale(.98, .98) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+}
+
+@keyframes drop4 {
+0% {
+ transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+}
+50% {
+ transform: rotateX(0deg) rotateY(0deg) rotateZ(10deg); 
+}
+100% {
+  transform: scale(.98, .98) rotateX(0deg) rotateY(0deg) rotateZ(20deg);
+}
+}
+
+@keyframes drop5 {
+0% {
+ transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+}
+50% {
+ transform: rotateX(0deg) rotateY(50deg) rotateZ(-10deg); 
+}
+100% {
+  transform: scale(.98, .98) rotateX(0deg) rotateY(0deg) rotateZ(40deg);
+}
+}
+}
+
+.grid-container{
+  
+border: 5px solid black;
+ height: 250px;
+ 
+ padding:10px;
+ margin: auto;
+}
+.grid-container1{
+  
+  border: 5px solid black;
+     height: 250px;
+     
+     padding:10px;
+     margin: auto;
+     margin-top: 80px;
+  }
+  .main-container{
+    display:flex;
+border: 6px solid red;
+}
+.sub-contain1{
+  border: 6px solid blue;
+  width: 49%;
+  background-color: green;
+}
+.sub-contain2{
+  border: 6px solid green;
+  width: 50%;
+  float: left;
+  background-color:aquamarine;
+  animation-name: bin;
+  animation-duration: 5s;
+  
+}
+@keyframes bin{
+  0%{
+    transform: scale(0,0);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+
+}
+
+.img1{
+  width: 140px;
+  height:200px ;
+}
+
+.animation-area{
+  background: linear-gradient(toleft,#8943a8, #ba383f);
+  width: 100%;
+  height: 100%;
+  
+}
+.box-area{
+  position: absolute;
+  top:0px;
+  left:0px;
+  
+  overflow: hidden;
+  background-color: #ba383f;
+}
+.box-area li{
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: animate 20s linear infinite;
+  bottom:-150px;
+
+}
+.box-area li:nth-child(1){
+  left:60%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(2){
+  left:12%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.box-area li:nth-child(3){
+  left:60%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 5.5s;
+}
+.box-area li:nth-child(4){
+  left:80%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.box-area li:nth-child(5){
+  left:65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(6){
+  left:15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+@keyframes animate{
+  0%{
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-800) rotate(360deg);
+    opacity: 0;
+  }
+
+}
+.button {
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+.button1 {
+background-color: white; 
+color: black; 
+border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+background-color: #4CAF50;
+color: white;
+}
+
+.button2 {
+background-color: white; 
+color: black; 
+border: 2px solid #008CBA;
+}
+
+.button2:hover {
+background-color: #008CBA;
+color: white;
+}
+
+.button3 {
+background-color: white; 
+color: black; 
+border: 2px solid #f44336;
+}
+
+.button3:hover {
+background-color: #f44336;
+color: white;
+}
