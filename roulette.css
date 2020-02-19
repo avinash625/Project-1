@@ -1,0 +1,321 @@
+.center {
+    text-align: center;
+}
+
+html, body {
+    background-image: url("background.jpg");
+    height: 100%;
+    margin:0;
+    overscroll-behavior: none;
+}
+
+h1 {
+    padding-top: 20px;
+    font-size: 200%;
+    color: white;
+    margin-bottom: 0;
+    background-color: black;
+}
+
+@keyframes animateText {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+#h1{
+	position: relative;
+	  font-family: sans-serif;
+	  text-transform: uppercase;
+	  font-size: 2em;
+	  letter-spacing: 4px;
+	  background-color: black;
+	  overflow: hidden;
+	  background: linear-gradient(90deg, #000, #fff, #000);
+	  background-repeat: no-repeat;
+	  background-size: 80%;
+	  animation: animateText 4s linear infinite;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+
+#boardwrapper {
+    /*background-color: green;*/
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    vertical-align: middle;
+    position: relative;
+    flex-flow: row;
+
+}
+
+#mainwrapper{
+	display: flex;
+	align-items: center;
+	/*background-color: lightblue;*/
+	width: 80%;
+	height: 80%;
+	margin: 50 auto;
+}
+
+/* Board */
+.board {
+    /*animation-name: rotationanimation;*/
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+}
+
+@keyframes rotationanimation{
+
+	20% { transform: rotate(72deg);}
+	40% {transform: rotate(144deg);}
+	60% {transform: rotate(216deg);}
+	80% {transform: rotate(288deg);}
+	100% {transform: rotate(360deg);}
+}
+
+
+#arrowimage{
+	width: 100;
+	height: 100;
+	padding-left: 50;
+	vertical-align: middle;
+}
+.boardinnerwrapper: hover{
+	animation: rotationanimation;
+	animation-duration: 5s;
+	animation-delay: 2s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+#boardimage{
+	width: 300;
+	height: 300;
+	padding: 10%;
+	animation: rotationanimation;
+	animation-duration: 5s;
+	animation-delay: 2s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    vertical-align: middle;
+    display: block;
+    opacity: 1.0;
+    animation-fill-mode: forwards;
+}
+
+#boardimage: hover{
+	width: 300;
+	height: 300;
+	padding: 10%;
+	animation: rotationanimation;
+	animation-duration: 5s;
+	animation-delay: 2s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    vertical-align: middle;
+    display: block;
+    opacity: 1.0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotationanimation{
+
+	100% {transform: rotate(2261deg);}
+}
+
+
+/* timer */
+.timer{
+  background-color:#333; width:300px;height:50px;
+  position:float;
+}
+
+
+.timer span{
+  display:block;
+  background:repeating-linear-gradient(-45deg, #000, rgba(0, 0, 0, 0) 25px, #FFF 25px, #FFF 50px);
+  width:300px; height:50px;
+  animation:timer 20s linear;
+}
+
+.timer span:before{  
+  content:"TIME LEFT";
+  display:block;
+  position:absolute; z-index:3;
+  left:0; 
+  right:0;
+  top:0;
+  bottom:0;
+  text-align:center;
+  line-height:50px;
+  font-size:25px;
+  color:red;
+}
+@keyframes timer{
+0%{width:10px;}
+100%{width:300px; display:block;}
+}
+
+
+
+/* Game Over */
+.gameover{
+  position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
+  animation:gameover 11s linear forwards;
+  font-size:80px; color:white; font-weight:bold; text-align:center; 
+  text-indent:0;  
+  line-height:500px;
+}
+
+@keyframes gameover{
+0%{left:-5000px;bottom:100%;}
+97%{left:-5000px;bottom:100%;}
+100%{ left:0px;}
+}
+
+
+
+/* Spin button*/
+.myButton {
+	/*animation: buttonanimation;
+	animation-delay: 1s;
+	animation-direction: normal;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;*/
+	box-shadow:inset 0px 0px 0px 0px #caefab;
+	/*background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);*/
+	background: lightblue;
+	background-color: lightblue/*#77d42a;*/
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:italic;
+	padding:13px 67px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+	float: right;
+}
+.myButton:hover {
+	/*background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);*/
+	background-color: lightblue;/*#5cb811;*/
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* Top navigation */
+.topnav {
+  overflow: hidden;
+  background-color: black;
+  padding-bottom: 10 auto;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: lightblue;
+  color: white;
+}
+
+.firstbutton{
+	vertical-align: middle;
+}
+
+@keyframes buttonanimation{
+
+	20% {transform: rotate(72deg); background: black}
+	40% {transform: rotate(144deg);}
+	60% {transform: rotate(216deg);}
+	80% {transform: rotate(288deg);}
+	100% {transform: rotate(360deg); background: green}
+}
+}
+
+.buttonwrapper{
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	animation-name: buttonanimation;
+	animation-duration: 5s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+
+
+.btn-three {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+}
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+.btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+}
